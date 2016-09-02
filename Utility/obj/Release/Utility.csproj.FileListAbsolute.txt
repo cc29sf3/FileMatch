@@ -1,0 +1,7 @@
+E:\SVN\FileMatch\Utility\bin\Release\Utility.dll
+E:\SVN\FileMatch\Utility\bin\Release\Utility.pdb
+E:\SVN\FileMatch\Utility\bin\Release\System.Data.SQLite.dll
+E:\SVN\FileMatch\Utility\bin\Release\System.Data.SQLite.pdb
+E:\SVN\FileMatch\Utility\obj\Release\Utility.csprojResolveAssemblyReference.cache
+E:\SVN\FileMatch\Utility\obj\Release\Utility.dll
+E:\SVN\FileMatch\Utility\obj\Release\Utility.pdb

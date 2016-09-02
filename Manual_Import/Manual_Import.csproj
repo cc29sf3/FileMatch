@@ -1,0 +1,255 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B27C7795-0ED8-4775-8686-84708279AAB9}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Manual_Import</RootNamespace>
+    <AssemblyName>Manual_Import</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>20150403035755860_easyicon_net_48.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Accessibility" />
+    <Reference Include="itextsharp">
+      <HintPath>..\FileMatch\bin\Debug\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Word, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="PresentationUI, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="ReachFramework" />
+    <Reference Include="SharpCompress, Version=0.10.3.0, Culture=neutral, PublicKeyToken=beaf6f427e128133, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\SharpCompress.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.SQLite">
+      <HintPath>..\DLLs\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Printing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="UIAutomationTypes" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Convertor\WpfConvertor.cs" />
+    <Compile Include="FileTypeDel.xaml.cs">
+      <DependentUpon>FileTypeDel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Helper\AsyncUdpServer.cs" />
+    <Compile Include="Helper\ExtendMethod.cs" />
+    <Compile Include="Helper\Reader.cs" />
+    <Compile Include="Helper\TimeoutMethod.cs" />
+    <Compile Include="Model\DelFile.cs" />
+    <Compile Include="Model\SystemType.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="SetUp.xaml.cs">
+      <DependentUpon>SetUp.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModel\ListViewSimpleAdorner.cs" />
+    <Compile Include="ViewModel\TidyMethod.cs" />
+    <Compile Include="ViewModel\ViewModel.cs" />
+    <Page Include="FileTypeDel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="SetUp.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="StyleResourceDictionary.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Model\Model_FileSystem.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\CNKI\工具集\WMControl\WMControl.csproj">
+      <Project>{fc6df1f4-cc73-4f94-a165-0b6b6e4df8b2}</Project>
+      <Name>WMControl</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FileMatch\FileMatch.csproj">
+      <Project>{57e74bac-3409-4e71-bede-9914654359a3}</Project>
+      <Name>FileMatch</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Utility\Utility.csproj">
+      <Project>{3249cd12-fb32-4512-b2ab-3b9f683c1ff3}</Project>
+      <Name>Utility</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\backgroud1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\dir.ico">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\file.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\not.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ok.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Tidy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Repair.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\enter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\mover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ico_SysRepair.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\btn\mie.png" />
+    <Resource Include="Resources\btn\mim.png" />
+    <Resource Include="Resources\btn\min.png" />
+    <Resource Include="Resources\btn\mme.png" />
+    <Resource Include="Resources\btn\mmm.png" />
+    <Resource Include="Resources\btn\mmn.png" />
+    <Resource Include="Resources\btn\mse.png" />
+    <Resource Include="Resources\btn\msm.png" />
+    <Resource Include="Resources\btn\msn.png" />
+    <Resource Include="Resources\btn\mxe.png" />
+    <Resource Include="Resources\btn\mxm.png" />
+    <Resource Include="Resources\btn\mxn.png" />
+    <Resource Include="Resources\btn\ske.png" />
+    <Resource Include="Resources\btn\skm.png" />
+    <Resource Include="Resources\btn\skn.png" />
+    <Resource Include="Resources\btn\xe.png" />
+    <Resource Include="Resources\btn\xm.png" />
+    <Resource Include="Resources\btn\xn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\skin1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="20150403035755860_easyicon_net_48.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="shang.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\error.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\upload.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\pdf.ico" />
+    <Resource Include="Resources\word.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\stop.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Tidy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Set.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

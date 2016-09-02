@@ -1,0 +1,29 @@
+[8:41:54:591]Message:值不能为 null。
+参数名: path
+
+[15:18:49:791]Message:开始打开word文件
+
+[15:19:0:742]Message:打开word文件成功
+
+[15:19:0:770]Message:获取word目录
+
+[15:19:1:823]Message:开始转pdf
+
+[15:19:6:47]Message:开始打开word文件
+
+[15:19:7:870]Message:打开word文件成功
+
+[15:19:7:878]Message:获取word目录
+
+[15:19:9:28]Message:开始转pdf
+
+[15:19:18:384]Message:2
+
+[15:19:18:395]Message:否
+
+[15:20:8:566]Message:1431112910篇发布失败:?????java.lang.RuntimeException: java.sql.SQLException: 20150504001????????[1431112910]
+
+[15:20:39:357]Message:1431112911篇发布失败:?????java.lang.RuntimeException: java.sql.SQLException: 20150504001????????[1431112911]
+
+[15:21:19:239]Message:1431112910篇发布失败:?????java.lang.RuntimeException: java.sql.SQLException: 20150504001????????[1431112910]
+

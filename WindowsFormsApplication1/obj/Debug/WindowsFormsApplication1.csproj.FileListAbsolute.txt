@@ -1,0 +1,15 @@
+E:\SVN重新整理\文件整理\WindowsFormsApplication1\obj\Debug\Interop.AcroPDFLib.dll
+E:\SVN重新整理\文件整理\WindowsFormsApplication1\obj\Debug\AxInterop.AcroPDFLib.dll
+E:\SVN重新整理\文件整理\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csproj.ResolveComReference.cache
+E:\SVN重新整理\文件整理\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe
+E:\SVN重新整理\文件整理\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.pdb
+E:\SVN重新整理\文件整理\WindowsFormsApplication1\bin\Debug\Interop.AcroPDFLib.dll
+E:\SVN重新整理\文件整理\WindowsFormsApplication1\bin\Debug\AxInterop.AcroPDFLib.dll
+E:\SVN重新整理\文件整理\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csprojResolveAssemblyReference.cache
+E:\SVN重新整理\文件整理\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Form1.resources
+E:\SVN重新整理\文件整理\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
+E:\SVN重新整理\文件整理\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csproj.GenerateResource.Cache
+E:\SVN重新整理\文件整理\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
+E:\SVN重新整理\文件整理\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb
+E:\SVN重新整理\文件整理\WindowsFormsApplication1\bin\Debug\PdfViewerWinNet.dll
+E:\SVN重新整理\文件整理\WindowsFormsApplication1\bin\Debug\PdfViewerWinNet.xml

@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+  <appSettings>
+    <!--纯盘起始编号-->
+    <add key="BEGIN_CODE" value="1400000582"/>
+    <!--刊盘编号-->
+    <add key="BEGIN_CODE_Kanpan" value=""/>
+    <!--pdf提取前几页作为非正文页-->
+    <add key="PDF_ExNum" value="5"/>
+    <!--无目录word文件提取前几页作为非正文页-->
+    <add key="Word_NoCatalog_ExNum" value="8"/>
+    <!--pdf提取前几页文字作为摘要-->
+    <add key="PDF_Summary_PageNum" value="5"/>
+    <!--word提取前多少字作为摘要-->
+    <add key="Word_Summary_Num" value="1000"/>
+  </appSettings>
+</configuration>

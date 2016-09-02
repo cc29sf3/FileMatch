@@ -1,0 +1,794 @@
+﻿<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>PdfViewer4WinNet</name>
+    </assembly>
+    <members>
+        <member name="T:PdfViewer4WinNet.ViewerTextOrder">
+            <summary>
+            Used in PdfViewerPreferences to specify the predominant reading order for text.
+            </summary>
+        </member>
+        <member name="F:PdfViewer4WinNet.ViewerTextOrder.L2R">
+            <summary>
+            Left to right.
+            </summary>
+        </member>
+        <member name="F:PdfViewer4WinNet.ViewerTextOrder.R2L">
+            <summary>
+            Right to left ( including vertical writing systems such as
+            Chinese, Japanese, and Korean ).
+            </summary>
+        </member>
+        <member name="T:PdfViewer4WinNet.PdfViewer">
+            <summary>
+            The PDF Viewer control
+            </summary>
+        </member>
+        <member name="F:PdfViewer4WinNet.PdfViewer.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:PdfViewer4WinNet.PdfViewer.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:PdfViewer4WinNet.PdfViewer.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:PdfViewer4WinNet.PdfViewer.#ctor">
+            <summary>
+            Creates a PdfViewer object
+            </summary>
+        </member>
+        <member name="M:PdfViewer4WinNet.PdfViewer.GetPageCount(System.String)">
+            <summary>
+            A fast method to obtain the page count of a specified PDF document.
+            </summary>
+            <param name="pdfFilePath">The path of the PDF file for which to get the page count.</param>
+            <returns>The number of pages in the specified PDF document.</returns>
+        </member>
+        <member name="M:PdfViewer4WinNet.PdfViewer.GetPageCount(System.IO.Stream)">
+            <summary>
+            A fast method to obtain the page count of a specified PDF document.
+            </summary>
+            <param name="pdfStream">The stream containing the PDF document for which to get the page count.</param>
+            <returns>The number of pages in the specified PDF document.</returns>
+        </member>
+        <member name="M:PdfViewer4WinNet.PdfViewer.RemoveProductLogo">
+            <summary>
+            Call this method to remove the product logo image when no PDF document is loaded in the viewer.
+            </summary>
+        </member>
+        <member name="M:PdfViewer4WinNet.PdfViewer.LoadFile(System.String)">
+            <summary>
+            Opens and displays the specified document within the browser.
+            </summary>
+            <param name="fileName">The pathname of the file to be opened.</param>
+            <returns>false if the file could not be opened, true otherwise.</returns>cfr1_Razvan
+        </member>
+        <member name="M:PdfViewer4WinNet.PdfViewer.LoadStream(System.IO.Stream)">
+            <summary>
+            Opens and displays the specified stream within the browser. 
+            </summary>
+            <param name="pdfStream">The stream to be opened.</param>
+            <returns>false if the file could not be opened, true otherwise.</returns>
+        </member>
+        <member name="M:PdfViewer4WinNet.PdfViewer.ReloadPdfDocument">
+            <summary>
+            Call this method to reload the currently loaded PDF document after changing the PdfViewerPreferences or the PdfSecurityOptions.
+            </summary>
+            <returns>Return true if the document was reloaded or false if the document was not reloaded</returns>
+        </member>
+        <member name="M:PdfViewer4WinNet.PdfViewer.GoToFirstPage">
+            <summary>
+            Goes to the first page in the document, maintaining the current location within the page and zoom level.
+            </summary>
+        </member>
+        <member name="M:PdfViewer4WinNet.PdfViewer.GoToLastPage">
+            <summary>
+            Goes to the last page in the document, maintaining the current location within the page and zoom level.
+            </summary>
+        </member>
+        <member name="M:PdfViewer4WinNet.PdfViewer.GoToNextPage">
+            <summary>
+            Goes to the next page in the document, if it exists. Maintains the current location within the page and zoom level.
+            </summary>
+        </member>
+        <member name="M:PdfViewer4WinNet.PdfViewer.GoToPreviousPage">
+            <summary>
+            Goes to the previous page in the document, if it exists. Maintains the current location within the page and zoom level.
+            </summary>
+        </member>
+        <member name="M:PdfViewer4WinNet.PdfViewer.Print">
+            <summary>
+            Prints the document according to the options selected in a user dialog box. 
+            The options include embedded printing (printing within a bounding rectangle on a given page), 
+            as well as interactive printing to a specified printer. 
+            This method returns immediately, even if the printing has not completed.
+            NOTE:If security settings do not allow printing, this method will be ignored.
+            </summary>
+        </member>
+        <member name="M:PdfViewer4WinNet.PdfViewer.PrintAll">
+            <summary>
+            Prints the entire document without displaying a user dialog box. The current printer, page settings, 
+            and job settings are used. This method returns immediately, even if the printing has not completed.
+            NOTE:If security settings do not allow printing, this method will be ignored.
+            </summary>
+        </member>
+        <member name="M:PdfViewer4WinNet.PdfViewer.PrintAllFit(System.Boolean)">
+            <summary>
+            Prints the entire document without displaying a user dialog box, and the pages are shrunk, if necessary, 
+            to fit into the imageable area of a page in the printer. 
+            The current printer, page settings, and job settings are used. This method returns immediately, 
+            even if the printing has not completed.
+            NOTE:If security settings do not allow printing, this method will be ignored.
+            </summary>
+            <param name="shrinkToFit">Specifies whether the pages will be shrunk, if necessary, to fit into the imageable area of a page in the printer.</param>
+        </member>
+        <member name="M:PdfViewer4WinNet.PdfViewer.PrintPages(System.Int32,System.Int32)">
+            <summary>
+            Prints the specified pages without displaying a user dialog box. The current printer, page settings, 
+            and job settings are used.This method returns immediately, even if the printing has not completed.
+            NOTE:If security settings do not allow printing, this method will be ignored.
+            </summary>
+            <param name="from">The page number of the first page to be printed. The first page in a document is page 0.</param>
+            <param name="to">The page number of the last page to be printed.</param>
+        </member>
+        <member name="M:PdfViewer4WinNet.PdfViewer.PrintPagesFit(System.Int32,System.Int32,System.Boolean)">
+            <summary>
+            Prints the specified pages without displaying a user dialog box. The current printer, page settings, 
+            and job settings are used. This method returns immediately, even if the printing has not completed.
+            NOTE:If security settings do not allow printing, this method will be ignored.
+            </summary>
+            <param name="from">The page number of the first page to be printed. The first page in a document is page 0.</param>
+            <param name="to">The page number of the last page to be printed.</param>
+            <param name="shrinkToFit">Specifies whether the pages will be shrunk, if necessary, 
+            to fit into the imageable area of a page in the printer.</param>
+        </member>
+        <member name="M:PdfViewer4WinNet.PdfViewer.PrintWithDialog">
+            <summary>
+            Prints the document according to the options selected in a user dialog box. 
+            The options include embedded printing (printing within a bounding rectangle on a given page), 
+            as well as interactive printing to a specified printer. 
+            This method returns immediately, even if the printing has not completed.
+            NOTE:If security settings do not allow printing, this method will be ignored.
+            </summary>
+        </member>
+        <member name="M:PdfViewer4WinNet.PdfViewer.GoBackwardStack">
+            <summary>
+            Goes to the previous view on the view stack, if the previous view exists. The previous view may be in a different document.
+            </summary>
+        </member>
+        <member name="M:PdfViewer4WinNet.PdfViewer.GoForwardStack">
+            <summary>
+            Goes to the next view on the view stack, if the next view exists. The next view may be in a different document.
+            </summary>
+        </member>
+        <member name="M:PdfViewer4WinNet.PdfViewer.SetCurrentHighlight(System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Highlights the text selection within the specified bounding rectangle on the current page.
+            </summary>
+            <param name="left">The distance in points from the left side of the page.</param>
+            <param name="top">The distance in points from the top of the page.</param>
+            <param name="right">The width of the bounding rectangle.</param>
+            <param name="bottom">The height of the bounding rectangle.</param>
+        </member>
+        <member name="M:PdfViewer4WinNet.PdfViewer.SetCurrentPage(System.Int32)">
+            <summary>
+            Goes to the specified page in the document. Maintains the current location within the page and zoom level.
+            </summary>
+            <param name="page">The page number of the destination page. The first page in a document is page 1.</param>
+        </member>
+        <member name="M:PdfViewer4WinNet.PdfViewer.SetLayoutMode(System.String)">
+            <summary>
+            Sets the layout mode for a page view according to the specified string.
+            </summary>
+            <param name="layoutMode">Possible values:
+                "DontCare": use the current user preference
+                "SinglePage": use single page mode (as it would have appeared in pre-Acrobat 3.0 viewers)
+                "OneColumn": use one-column continuous mode
+                "TwoColumnLeft": use two-column continuous mode with the first page on the left
+                "TwoColumnRight": use two-column continuous mode with the first page on the right</param>
+        </member>
+        <member name="M:PdfViewer4WinNet.PdfViewer.SetNamedDest(System.String)">
+            <summary>
+            Changes the page view to the named destination in the specified string.
+            </summary>
+            <param name="namedDest">The named destination to which the viewer will go.</param>
+        </member>
+        <member name="M:PdfViewer4WinNet.PdfViewer.SetPageMode(System.String)">
+            <summary>
+            Sets the page mode according to the specified string.
+            </summary>
+            <param name="pageMode">
+            Possible values:
+                "none": displays the document, but does not display bookmarks or thumbnails (default)
+                "bookmarks": displays the document and bookmarks
+                "thumbs": displays the document and thumbnails
+            </param>
+        </member>
+        <member name="M:PdfViewer4WinNet.PdfViewer.SetShowScrollbars(System.Boolean)">
+            <summary>
+            Determines whether scrollbars will appear in the document view.
+            </summary>
+            <param name="on">A true value indicates that scrollbars will appear, false indicates that they will not.</param>
+        </member>
+        <member name="M:PdfViewer4WinNet.PdfViewer.SetShowToolbar(System.Boolean)">
+            <summary>
+            Determines whether a toolbar will appear in the viewer.
+            </summary>
+            <param name="on">A positive value indicates that the toolbar will appear, 0 indicates that it will not.</param>
+        </member>
+        <member name="M:PdfViewer4WinNet.PdfViewer.SetView(System.String)">
+            <summary>
+            Sets the view of a page according to the specified string.
+            </summary>
+            <param name="viewMode">
+            Possible values:
+                    "Fit": fits the entire page within the window both vertically and horizontally.
+                    "FitH": fits the entire width of the page within the window.
+                    "FitV": fits the entire height of the page within the window.
+                    "FitB": fits the bounding box within the window both vertically and horizontally.
+                    "FitBH": fits the entire width of the bounding box within the window.
+                    "FitBV": fits the entire height of the bounding box within the window.
+            </param>
+        </member>
+        <member name="M:PdfViewer4WinNet.PdfViewer.SetViewRect(System.Single,System.Single,System.Single,System.Single)">
+            <summary>
+            Sets the view rectangle according to the specified coordinates.
+            </summary>
+            <param name="left">The upper left horizontal coordinate.</param>
+            <param name="top">The vertical coordinate in the upper left corner.</param>
+            <param name="width">The horizontal width of the rectangle.</param>
+            <param name="height">The vertical height of the rectangle.</param>
+        </member>
+        <member name="M:PdfViewer4WinNet.PdfViewer.SetViewScroll(System.String,System.Single)">
+            <summary>
+            Sets the view of a page according to the specified string. Depending on the view mode, 
+            the page is either scrolled to the right or scrolled down by the amount specified in offset.
+            </summary>
+            <param name="viewMode">
+            Possible values:
+                    "Fit": fits the entire page within the window both vertically and horizontally.
+                    "FitH": fits the entire width of the page within the window.
+                    "FitV": fits the entire height of the page within the window.
+                    "FitB": fits the bounding box within the window both vertically and horizontally.
+                    "FitBH": fits the entire width of the bounding box within the window.
+                    "FitBV": fits the entire height of the bounding box within the window.
+            </param>
+            <param name="offset">The horizontal or vertical coordinate positioned either at the left or top edge.</param>
+        </member>
+        <member name="M:PdfViewer4WinNet.PdfViewer.SetZoom(System.Single)">
+            <summary>
+            Sets the magnification according to the specified value.
+            </summary>
+            <param name="percent">The desired zoom factor, expressed as a percentage 
+            (for example, 100 represents a magnification of 100%).</param>
+        </member>
+        <member name="M:PdfViewer4WinNet.PdfViewer.SetZoomScroll(System.Single,System.Single,System.Single)">
+            <summary>
+            Sets the magnification according to the specified value, and scrolls the page view both horizontally and vertically according to the specified amounts.
+            </summary>
+            <param name="percent">The desired zoom factor, expressed as a percentage (for example, 1.0 represents a magnification of 100%).</param>
+            <param name="left">The horizontal coordinate positioned at the left edge.</param>
+            <param name="top">The vertical coordinate positioned at the top edge.</param>
+        </member>
+        <member name="M:PdfViewer4WinNet.PdfViewer.Close">
+            <summary>
+            Releases the resources used by this control
+            </summary>
+        </member>
+        <member name="P:PdfViewer4WinNet.PdfViewer.LicenseKey">
+            <summary>
+            Gets or sets the license key
+            </summary>
+        </member>
+        <member name="P:PdfViewer4WinNet.PdfViewer.PdfViewerPreferences">
+            <summary>
+            Gets a reference to the object controlling the PDF document viewer preferences. The properties of this
+            object allows you hide toolbars and menus, hide all navigation panels, change the page mode and the page layout.
+            The PDF document viewer preferences are modified before the document is displayed by the viewer. The modified
+            viewer preferences are taking effect after the document is reloaded in the viewer control.
+            </summary>
+        </member>
+        <member name="P:PdfViewer4WinNet.PdfViewer.PdfSecurityOptions">
+            <summary>
+            Gets a reference to the object to controlling the PDF document security settings like user and owner password, 
+            restrict printing or editing of the generated PDF document.
+            The PDF document security settings are modified before the document is displayed by the viewer. The modified
+            security settings are taking effect after the document is reloaded in the viewer control.
+            </summary>
+        </member>
+        <member name="P:PdfViewer4WinNet.PdfViewer.OpenPassword">
+            <summary>
+            A password used to open a password protected PDF document in order to change its 
+            viewer preferences and security options.
+            </summary>
+        </member>
+        <member name="P:PdfViewer4WinNet.PdfViewer.PageCount">
+            <summary>
+            Gets the page count of the currently loaded PDF document.
+            </summary>
+        </member>
+        <member name="P:PdfViewer4WinNet.PdfViewer.CurrentPage">
+            <summary>
+            Goes to the specified page in the document. Maintains the current location within the page and zoom level.
+            The first page in a document is page 1. A negative value means that the viewer will go to a default page.
+            The default value is -1.
+            </summary>
+        </member>
+        <member name="P:PdfViewer4WinNet.PdfViewer.PageLayoutMode">
+            <summary>
+            Gets or sets the layout mode for a page view. The default value is NotSet.
+            </summary>
+        </member>
+        <member name="P:PdfViewer4WinNet.PdfViewer.ShowNavigationPanel">
+            <summary>
+            Set this property to false before loading the first document in the viewer to hide 
+            the navigation panel from the left side of the viewer containing buttons 
+            to view the bookmarks, thumbnails, file attachments and comments of the document.
+            The default value of this property is true. This property is a shortcut 
+            for the PdfViewerPreferences.HideWindowUI.
+            </summary>
+        </member>
+        <member name="P:PdfViewer4WinNet.PdfViewer.DocumentDisplayMode">
+            <summary>
+            Gets or sets the display mode of the document to show thumbnails or bookmarks. The default value is NotSet.
+            </summary>
+        </member>
+        <member name="P:PdfViewer4WinNet.PdfViewer.ShowScrollbars">
+            <summary>
+            Show or hide the viewer scrollbars. The default value is true.
+            </summary>
+        </member>
+        <member name="P:PdfViewer4WinNet.PdfViewer.ShowToolbarMode">
+            <summary>
+            Show or hide the viewer toolbar. The default value is NotSet.
+            </summary>
+        </member>
+        <member name="P:PdfViewer4WinNet.PdfViewer.PageFitMode">
+            <summary>
+            Gets or sets the fit mode of the PDF page in the viewer. The default value is NotSet.
+            </summary>
+        </member>
+        <member name="P:PdfViewer4WinNet.PdfViewer.ZoomPercentage">
+            <summary>
+            Gets or sets the zoom percentage of the viewer as a float number. For example, 100 represents a magnification of 100%. 
+            A negative value means the default zoom percentage is used. The default value is -1.
+            </summary>
+        </member>
+        <member name="P:PdfViewer4WinNet.PdfViewer.CanAssembleDocument">
+            <summary>
+            Can assemble the document (create bookmarks, thumbnail images or insert, rotate, delete
+            pages). This property has effect when a 128 bit key is used. The default value is true.
+            </summary>
+        </member>
+        <member name="P:PdfViewer4WinNet.PdfViewer.CanCopyContent">
+            <summary>
+            Can copy the document content. The default value is true.
+            </summary>
+        </member>
+        <member name="P:PdfViewer4WinNet.PdfViewer.CanEditAnnotations">
+            <summary>
+            Can edit PDF document annotations. The default value is true.
+            </summary>
+        </member>
+        <member name="P:PdfViewer4WinNet.PdfViewer.CanEditContent">
+            <summary>
+            Can edit PDF document content. The default value is true.
+            </summary>
+        </member>
+        <member name="P:PdfViewer4WinNet.PdfViewer.CanFillFormFields">
+            <summary>
+            Can fill the form fields. This property has effect when a 128 bit key is used. The default value is true.
+            </summary>
+        </member>
+        <member name="P:PdfViewer4WinNet.PdfViewer.CanPrint">
+            <summary>
+            Can print the document. The default value is true.
+            </summary>
+        </member>
+        <member name="P:PdfViewer4WinNet.PdfViewer.KeySize">
+            <summary>
+            The dimension of the encryption key. By default a 128 bit key is used.
+            </summary>
+        </member>
+        <member name="P:PdfViewer4WinNet.PdfViewer.OwnerPassword">
+            <summary>
+            The password required to change permissions of the PDF document like printing or editing. The default value is an empty string.
+            If the OwnerPassword property is an empty string and the UserPassword is not empty,
+            the OwnerPassword will be automatically assigned with the value from UserPassword and when the PDF document is opened in the viewer using the user password (which is also the owner password) 
+            all the operations like printing, copying, etc will be allowed.
+            </summary>
+        </member>
+        <member name="P:PdfViewer4WinNet.PdfViewer.UserPassword">
+            <summary>
+            The password required to open the PDF document. The default value is an empty string.
+            If the OwnerPassword property is an empty string and the UserPassword is not empty,
+            the OwnerPassword will be automatically assigned with the value from UserPassword and when the PDF document is opened in the viewer using the user password (which is also the owner password) 
+            all the operations like printing, copying, etc will be allowed.
+            </summary>
+        </member>
+        <member name="T:PdfViewer4WinNet.ShowToolbarMode">
+            <summary>
+            The viewer toolbar display mode.
+            </summary>
+        </member>
+        <member name="F:PdfViewer4WinNet.ShowToolbarMode.NotSet">
+            <summary>
+            The default display mode.
+            </summary>
+        </member>
+        <member name="F:PdfViewer4WinNet.ShowToolbarMode.Show">
+            <summary>
+            Show the toolbar.
+            </summary>
+        </member>
+        <member name="F:PdfViewer4WinNet.ShowToolbarMode.Hide">
+            <summary>
+            Hide the toolbar.
+            </summary>
+        </member>
+        <member name="T:PdfViewer4WinNet.PdfViewerPageMode">
+            <summary>
+            Options in PdfViewerPreferences for how the document should be displayed when opened.
+            </summary>
+        </member>
+        <member name="F:PdfViewer4WinNet.PdfViewerPageMode.UseNone">
+            <summary>
+            Neither document outline nor thumbnail images visible.
+            </summary>
+        </member>
+        <member name="F:PdfViewer4WinNet.PdfViewerPageMode.UseOutlines">
+            <summary>
+            Document outline (bookmarks) visible.
+            </summary>
+        </member>
+        <member name="F:PdfViewer4WinNet.PdfViewerPageMode.UseThumbs">
+            <summary>
+            Thumbnail images visible.
+            </summary>
+        </member>
+        <member name="F:PdfViewer4WinNet.PdfViewerPageMode.FullScreen">
+            <summary>
+            Full-screen mode, with no menu bar, window
+            controls, or any other window visible.
+            </summary>
+        </member>
+        <member name="F:PdfViewer4WinNet.PdfViewerPageMode.UseOC">
+            <summary>
+            Optional content group panel visible.
+            </summary>
+        </member>
+        <member name="F:PdfViewer4WinNet.PdfViewerPageMode.UseAttachments">
+            <summary>
+            Document attachments visible.
+            </summary>
+        </member>
+        <member name="T:PdfViewer4WinNet.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:PdfViewer4WinNet.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:PdfViewer4WinNet.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="T:PdfViewer4WinNet.PageLayoutMode">
+            <summary>
+            The layout mode of the PDF page in the viewer.
+            </summary>
+        </member>
+        <member name="F:PdfViewer4WinNet.PageLayoutMode.NotSet">
+            <summary>
+            Use the default layout mode.
+            </summary>
+        </member>
+        <member name="F:PdfViewer4WinNet.PageLayoutMode.DontCare">
+            <summary>
+            Use the current user preference.
+            </summary>
+        </member>
+        <member name="F:PdfViewer4WinNet.PageLayoutMode.SinglePage">
+            <summary>
+            Use single page mode (as it would have appeared in pre-Acrobat 3.0 viewers).
+            </summary>
+        </member>
+        <member name="F:PdfViewer4WinNet.PageLayoutMode.OneColumn">
+            <summary>
+            Use one-column continuous mode.
+            </summary>
+        </member>
+        <member name="F:PdfViewer4WinNet.PageLayoutMode.TwoColumnLeft">
+            <summary>
+            Use two-column continuous mode with the first page on the left.
+            </summary>
+        </member>
+        <member name="F:PdfViewer4WinNet.PageLayoutMode.TwoColumnRight">
+            <summary>
+            Use two-column continuous mode with the first page on the right.
+            </summary>
+        </member>
+        <member name="T:PdfViewer4WinNet.PdfViewerPageLayout">
+            <summary>
+            The page layout in PdfViewerPreferences to be used when the document is opened.
+            </summary>
+        </member>
+        <member name="F:PdfViewer4WinNet.PdfViewerPageLayout.SinglePage">
+            <summary>
+            Display one page at a time.
+            </summary>
+        </member>
+        <member name="F:PdfViewer4WinNet.PdfViewerPageLayout.OneColumn">
+            <summary>
+            Display the pages in one column.
+            </summary>
+        </member>
+        <member name="F:PdfViewer4WinNet.PdfViewerPageLayout.TwoColumnLeft">
+            <summary>
+            Display the pages in two columns, with odd numbered
+            pages on the left.
+            </summary>
+        </member>
+        <member name="F:PdfViewer4WinNet.PdfViewerPageLayout.TwoColumnRight">
+            <summary>
+            Display the pages in two columns, with odd numbered
+            pages on the right.
+            </summary>
+        </member>
+        <member name="T:PdfViewer4WinNet.PdfViewerFullScreenExitMode">
+            <summary>
+            Used in PdfViewerPreferences to specify how to display the document on exiting full-screen mode
+            </summary>
+        </member>
+        <member name="F:PdfViewer4WinNet.PdfViewerFullScreenExitMode.UseNone">
+            <summary>
+            Neither document outline nor thumbnail images visible.
+            </summary>
+        </member>
+        <member name="F:PdfViewer4WinNet.PdfViewerFullScreenExitMode.UseOutlines">
+            <summary>
+            Document outline visible.
+            </summary>
+        </member>
+        <member name="F:PdfViewer4WinNet.PdfViewerFullScreenExitMode.UseThumbs">
+            <summary>
+            Thumbnail images visible.
+            </summary>
+        </member>
+        <member name="F:PdfViewer4WinNet.PdfViewerFullScreenExitMode.UseOC">
+            <summary>
+            Optional content group panel visible.
+            </summary>
+        </member>
+        <member name="T:PdfViewer4WinNet.PdfViewerException">
+            <summary>
+            PDF Viewer Exception
+            </summary>
+        </member>
+        <member name="M:PdfViewer4WinNet.PdfViewerException.#ctor(System.String)">
+            <summary>
+            PDF Viewer Exception constructor
+            </summary>
+            <param name="message">The exception message</param>
+        </member>
+        <member name="M:PdfViewer4WinNet.PdfViewerException.#ctor(System.String,System.Exception)">
+            <summary>
+            PDF Viewer Exception constructor
+            </summary>
+            <param name="message">The exception message</param>
+            <param name="innerException">The inner exception which triggered this exception</param>
+        </member>
+        <member name="T:PdfViewer4WinNet.PageFitMode">
+            <summary>
+            The fit mode of the PDF page in the viewer.
+            </summary>
+        </member>
+        <member name="F:PdfViewer4WinNet.PageFitMode.NotSet">
+            <summary>
+            Use the default fit mode
+            </summary>
+        </member>
+        <member name="F:PdfViewer4WinNet.PageFitMode.Fit">
+            <summary>
+            Fits the entire page within the window both vertically and horizontally.
+            </summary>
+        </member>
+        <member name="F:PdfViewer4WinNet.PageFitMode.FitH">
+            <summary>
+            Fits the entire width of the page within the window
+            </summary>
+        </member>
+        <member name="F:PdfViewer4WinNet.PageFitMode.FitV">
+            <summary>
+            Fits the entire height of the page within the window.
+            </summary>
+        </member>
+        <member name="F:PdfViewer4WinNet.PageFitMode.FitB">
+            <summary>
+            Fits the bounding box within the window both vertically and horizontally.
+            </summary>
+        </member>
+        <member name="F:PdfViewer4WinNet.PageFitMode.FitBH">
+            <summary>
+            Fits the entire width of the bounding box within the window.
+            </summary>
+        </member>
+        <member name="F:PdfViewer4WinNet.PageFitMode.FitBV">
+            <summary>
+            Fits the entire height of the bounding box within the window.
+            </summary>
+        </member>
+        <member name="T:PdfViewer4WinNet.DocumentDisplayMode">
+            <summary>
+            The display mode of the PDF document in the viewer.
+            </summary>
+        </member>
+        <member name="F:PdfViewer4WinNet.DocumentDisplayMode.NotSet">
+            <summary>
+            Use default document display mode.
+            </summary>
+        </member>
+        <member name="F:PdfViewer4WinNet.DocumentDisplayMode.None">
+            <summary>
+            Displays the document, but does not display bookmarks or thumbnails (default)
+            </summary>
+        </member>
+        <member name="F:PdfViewer4WinNet.DocumentDisplayMode.Bookmarks">
+            <summary>
+            Displays the document and bookmarks.
+            </summary>
+        </member>
+        <member name="F:PdfViewer4WinNet.DocumentDisplayMode.Thumbs">
+            <summary>
+            Displays the document and thumbnails.
+            </summary>
+        </member>
+        <member name="T:PdfViewer4WinNet.PdfSecurityOptions">
+            <summary>
+            This class encapsulates the options to control the PDF document
+            security options. The PDF document is modified
+            to apply the properties from the PdfSecurityOptions before being displayed in the viewer control
+            and this might introduce an additional delay before the document is displayed.
+            </summary>
+        </member>
+        <member name="P:PdfViewer4WinNet.PdfSecurityOptions.CanAssembleDocument">
+            <summary>
+            Can assemble the document (create bookmarks, thumbnail images or insert, rotate, delete
+            pages). This property has effect when a 128 bit key is used.
+            </summary>
+        </member>
+        <member name="P:PdfViewer4WinNet.PdfSecurityOptions.CanCopyContent">
+            <summary>
+            Can copy the document content. 
+            </summary>
+        </member>
+        <member name="P:PdfViewer4WinNet.PdfSecurityOptions.CanEditAnnotations">
+            <summary>
+            Can edit PDF document annotations. 
+            </summary>
+        </member>
+        <member name="P:PdfViewer4WinNet.PdfSecurityOptions.CanEditContent">
+            <summary>
+            Can edit PDF document content. 
+            </summary>
+        </member>
+        <member name="P:PdfViewer4WinNet.PdfSecurityOptions.CanFillFormFields">
+            <summary>
+            Can fill the form fields. This property has effect when a 128 bit key is used. To disable form filling the CanEditContent and CanEditAnnotations must be set on false.
+            </summary>
+        </member>
+        <member name="P:PdfViewer4WinNet.PdfSecurityOptions.CanPrint">
+            <summary>
+            Can print the document. 
+            </summary>
+        </member>
+        <member name="P:PdfViewer4WinNet.PdfSecurityOptions.KeySize">
+            <summary>
+            The dimension of the encryption key. By default a 128 bit key is used.
+            </summary>
+        </member>
+        <member name="P:PdfViewer4WinNet.PdfSecurityOptions.OwnerPassword">
+            <summary>
+            The password required to change permissions of the PDF document like printing or editing.
+            If the OwnerPassword property is an empty string and the UserPassword is not empty,
+            the OwnerPassword will be automatically assigned with the value from UserPassword and when the PDF document is opened in the viewer using the user password (which is also the owner password) 
+            all the operations like printing, copying, etc will be allowed.
+            </summary>
+        </member>
+        <member name="P:PdfViewer4WinNet.PdfSecurityOptions.UserPassword">
+            <summary>
+            The password required to open the PDF document.
+            </summary>
+        </member>
+        <member name="T:PdfViewer4WinNet.EncryptionKeySize">
+            <summary>
+            The length of the encryption key
+            </summary>
+        </member>
+        <member name="F:PdfViewer4WinNet.EncryptionKeySize.EncryptKey128Bit">
+            <summary>
+            A 128 bit length.
+            </summary>
+        </member>
+        <member name="F:PdfViewer4WinNet.EncryptionKeySize.EncryptKey40Bit">
+            <summary>
+            A 40 bit length.
+            </summary>
+        </member>
+        <member name="T:PdfViewer4WinNet.PdfViewerPreferences">
+            <summary>
+            Represents the viewer preferences of the PDF document. The PDF document is modified
+            to apply the properties from the PdfViewerPreferences before being displayed in the viewer control
+            and this might introduce an additional delay before the document is displayed.
+            </summary>
+        </member>
+        <member name="P:PdfViewer4WinNet.PdfViewerPreferences.HideMainToolbar">
+            <summary>
+            A flag specifying whether to hide the viewer application’s tool
+            bars when the document is active. Default value: False.
+            </summary>
+        </member>
+        <member name="P:PdfViewer4WinNet.PdfViewerPreferences.HideMenuBar">
+            <summary>
+            A flag specifying whether to hide the viewer application’s
+            menu bar when the document is active. Default value: False.
+            </summary>
+        </member>
+        <member name="P:PdfViewer4WinNet.PdfViewerPreferences.HideWindowUI">
+            <summary>
+            A flag specifying whether to hide user interface elements in
+            the document’s window (such as scroll bars and navigation controls),
+            leaving only the document’s contents displayed. Default value: False.
+            </summary>
+        </member>
+        <member name="P:PdfViewer4WinNet.PdfViewerPreferences.FitWindow">
+            <summary>
+            A flag specifying whether to resize the document’s window to
+            fit the size of the first displayed page. Default value: False.
+            </summary>
+        </member>
+        <member name="P:PdfViewer4WinNet.PdfViewerPreferences.DisplayDocTitle">
+            <summary>
+            A flag specifying whether the window’s title bar should display the document title
+            taken from the title entry of the document information dictionary. Default value: False.
+            </summary>
+        </member>
+        <member name="P:PdfViewer4WinNet.PdfViewerPreferences.NonFullScreenPageMode">
+            <summary>
+            The document’s page mode, specifying how to display the
+            document on exiting full-screen mode. This entry is meaningful only if the value of the PageMode entry in the catalog dictionary 
+            is FullScreen; it is ignored otherwise. Default value: UseNone.
+            </summary>
+        </member>
+        <member name="P:PdfViewer4WinNet.PdfViewerPreferences.Direction">
+            <summary>
+            The predominant reading order for text. Default value: L2R.
+            </summary>
+        </member>
+        <member name="P:PdfViewer4WinNet.PdfViewerPreferences.PageMode">
+            <summary>
+            Specifies how the document should be displayed when opened. Default value: UseNone.
+            </summary>
+        </member>
+        <member name="P:PdfViewer4WinNet.PdfViewerPreferences.PageLayout">
+            <summary>
+            The page layout to be used when the document is opened. Default value: OneColumn.
+            </summary>
+        </member>
+    </members>
+</doc>

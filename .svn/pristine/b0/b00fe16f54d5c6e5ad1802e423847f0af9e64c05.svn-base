@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+  <appSettings>
+    <!--纯盘起始编号-->
+    <add key="BEGIN_CODE" value="1400021211"/>
+    <!--刊盘编号-->
+    <add key="BEGIN_CODE_Kanpan" value=""/>
+    
+    <add key="PDF_FrontNum" value="7"/>
+    <add key="PDF_BackNum" value="5"/>
+    <add key="Word_FrontNum" value="7"/>
+    <add key="Word_BackNum" value="5"/>
+    
+    
+    
+    <!--pdf提取前几页作为非正文页-->
+    <add key="PDF_ExNum" value="7"/>
+    <!--无目录word文件提取前几页作为非正文页-->
+    <add key="Word_NoCatalog_ExNum" value="8"/>
+    
+    <!--pdf提取前几页文字作为摘要-->
+    <add key="PDF_Summary_PageNum" value="5"/>
+    <!--word提取前多少字作为摘要-->
+    <add key="Word_Summary_Num" value="1000"/>
+<!--获取前n页包含如下词汇的段落 word规则-->
+    <add key="Front5DocFetchWord" value="学位论文版权使用授权书,独创性说明,指导教师,专业名称,答辩日期,作者签名"/>
+<!--前n页要删除的含有如下词汇 PDF规则-->
+    <add key="Front5RemoveWord" value="摘要,Abstract,目录,关键词,Keyword,ABSTRACT,引言,第一章,概述................................"/>
+<!--后n页要提取的含有如下词汇的section-->
+    <add key="Back5FetchWord" value="版权,授权,保密,知识产权,著作权,承诺书,Authorization,AUTHORIZATION"/>
+  </appSettings>
+</configuration>
